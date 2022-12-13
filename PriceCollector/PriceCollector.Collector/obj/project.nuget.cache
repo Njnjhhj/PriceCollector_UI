@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "obPTFBnVi42qj+sAnObZjPmCjx1uDaVUC3VdTjnbRpJsWDtUje1N0YoQrQvQw4LGPPsk7CAhxMs0mHCCHqhYUA==",
+  "dgSpecHash": "LJm8rmde6YSrR3V7emLpMneBq7fFqM8agLqCswXEscxQO/ETzPsVwziAU9dlOdDHGIHWvLbaYvtTlK0kxGr00w==",
   "success": true,
-  "projectFilePath": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector\\PriceCollector.Collector\\PriceCollector.Collector.csproj",
+  "projectFilePath": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector_UI\\PriceCollector\\PriceCollector.Collector\\PriceCollector.Collector.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olzhu\\.nuget\\packages\\excelmapper\\5.2.393\\excelmapper.5.2.393.nupkg.sha512",
     "C:\\Users\\olzhu\\.nuget\\packages\\log4net\\2.0.14\\log4net.2.0.14.nupkg.sha512",

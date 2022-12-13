@@ -2100,11 +2100,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector\\PriceCollector.CollectorStgPro\\PriceCollector.CollectorStgPro.csproj",
+      "projectUniqueName": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector_UI\\PriceCollector\\PriceCollector.CollectorStgPro\\PriceCollector.CollectorStgPro.csproj",
       "projectName": "PriceCollector.CollectorStgPro",
-      "projectPath": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector\\PriceCollector.CollectorStgPro\\PriceCollector.CollectorStgPro.csproj",
+      "projectPath": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector_UI\\PriceCollector\\PriceCollector.CollectorStgPro\\PriceCollector.CollectorStgPro.csproj",
       "packagesPath": "C:\\Users\\olzhu\\.nuget\\packages\\",
-      "outputPath": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector\\PriceCollector.CollectorStgPro\\obj\\",
+      "outputPath": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector_UI\\PriceCollector\\PriceCollector.CollectorStgPro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\olzhu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2121,8 +2121,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector\\PriceCollector.Core\\PriceCollector.Core.csproj": {
-              "projectPath": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector\\PriceCollector.Core\\PriceCollector.Core.csproj"
+            "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector_UI\\PriceCollector\\PriceCollector.Core\\PriceCollector.Core.csproj": {
+              "projectPath": "C:\\Work\\sandbox\\PriceCollectorNew_v3\\PriceCollector_UI\\PriceCollector\\PriceCollector.Core\\PriceCollector.Core.csproj"
             }
           }
         }
