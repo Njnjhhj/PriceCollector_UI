@@ -1,0 +1,44 @@
+﻿{
+    "Websites": [
+        {
+            "name": "Dmlights",
+            "uri": "https://www.dmlights.be/"
+        },
+        {
+            "name": "Tecshop",
+            "uri": "https://www.tecshop.be/"
+        },
+        {
+            "name": "Webshop",
+            "uri": "https://webshop.electro-colli.be/"
+        },
+        {
+            "name": "Solyd",
+            "uri": "https://www.solyd.be/nl/"
+        },
+        {
+            "name": "Gigatek",
+            "uri": "https://gigatek.be/nl"
+        },
+        {
+            "name": "Semmatec",
+            "uri": "https://www.semmatec.be/nl/"
+        },
+        {
+            "name": "Groothandel",
+            "uri": "https://www.groothandel.be/"
+        },
+        {
+            "name": "Omnielectric",
+            "uri": "https://omnielectric.be/"
+        },
+        {
+            "name": "Zelektro",
+            "uri": "http://zelektro.be/"
+        },
+        {
+            "name": "MyElectro",
+            "uri": "https://www.my-electro.be/"
+        }
+    ]
+}

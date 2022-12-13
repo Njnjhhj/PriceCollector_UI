@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ExcelMapper" Version="5.2.393" />
+		<PackageReference Include="log4net" Version="2.0.14" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="NUnit" Version="3.13.3" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+		<PackageReference Include="Selenium.Support" Version="4.3.0" />
+		<PackageReference Include="Selenium.WebDriver" Version="4.3.0" />
+		<PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="104.0.5112.7900" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\PriceCollector.Core\PriceCollector.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Configuration\Websites.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
