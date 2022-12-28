@@ -5,6 +5,7 @@
 
 # User-specific files
 *.rsuser
+
 *.suo
 *.user
 *.userosscache
@@ -397,3 +398,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 PriceCollector/.vs/PriceCollector/v16/TestStore/0/020.testlog
+*.cache
+*.cache
+*.v2
