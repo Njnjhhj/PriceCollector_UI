@@ -10,7 +10,6 @@ using PriceCollector.Collector.PageObjects.Dmlights;
 using PriceCollector.Collector.WebUtils;
 using PriceCollector.Core.Utils;
 
-
 namespace PriceCollector.Collector.Flows
 {
     public class DmlightsFlow : PageObjectBase, IFlow
@@ -83,8 +82,16 @@ namespace PriceCollector.Collector.Flows
 
         public void HandleQuestionPopup()
         {
-            if (IsQuestionPopupDisplayed())
-                _dmlightsMainPage.QuestionPopupCloseButton.Click();
+            try
+            {
+                if (IsQuestionPopupDisplayed())
+                    _dmlightsMainPage.QuestionPopupCloseButton.Click();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"WARNING! Error in '{MethodBase.GetCurrentMethod()}': {e.Message} ");
+            }
+            
         }
 
         protected string GetProductAvailability(string itemId)

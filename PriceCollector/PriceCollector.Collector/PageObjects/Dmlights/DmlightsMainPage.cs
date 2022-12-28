@@ -14,6 +14,6 @@ namespace PriceCollector.Collector.PageObjects.Dmlights
         public IWebElement SearchField => driver.FindElement(By.CssSelector("#topSearchInput"));
         public IWebElement SearchButton => driver.FindElement(By.CssSelector(".dmSearchField .icon-search"));
         public IWebElement QuestionPopup => driver.UsingDriverImplicitTimeout(()=> driver.FindElement(By.CssSelector(".ins-preview-wrapper")), TimeSpan.FromMilliseconds(300));
-        public IWebElement QuestionPopupCloseButton => QuestionPopup.FindElement(By.CssSelector(".ins-element-close-button"));
+        public IWebElement QuestionPopupCloseButton => driver.UsingDriverImplicitTimeout( () => QuestionPopup.FindElement(By.CssSelector(".ins-element-close-button")), TimeSpan.FromMilliseconds(300));
     }
 }

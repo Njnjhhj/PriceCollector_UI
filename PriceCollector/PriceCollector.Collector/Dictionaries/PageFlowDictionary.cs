@@ -18,7 +18,8 @@ namespace PriceCollector.Collector.Dictionaries
             { "Semmatec", driver => new SemmatecFlow(driver) },
             { "Groothandel", driver => new GroothandelFlow(driver) },
             { "Omnielectric", driver => new OmnielectricFlow(driver) },
-            { "Zelektro", driver => new ZelektroFlow(driver) }
+            { "Zelektro", driver => new ZelektroFlow(driver) },
+            { "MyElectro", driver => new MyElectroFlow(driver) }
         };
     }
 }

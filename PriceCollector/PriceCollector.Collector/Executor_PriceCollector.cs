@@ -136,7 +136,7 @@ namespace PriceCollector.Collector
         {
             var WEBSITES_TO_COLLECT = new List<WebsitesEnum>()
             {
-                //WebsitesEnum.Dmlights,
+                WebsitesEnum.Dmlights,
                 WebsitesEnum.Tecshop,
                 WebsitesEnum.Webshop,
                 WebsitesEnum.Solyd,
