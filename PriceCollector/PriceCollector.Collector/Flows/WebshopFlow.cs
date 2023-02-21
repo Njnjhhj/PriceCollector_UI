@@ -34,7 +34,9 @@ namespace PriceCollector.Collector.Flows
 
                     SearchProductItem(itemId);
 
-                    var itemData = GetItemDataFromSearchResult(itemId);
+                    var itemData = IsProductItemBlockDisplayed() 
+                        ? GetItemDataFromSearchResult(itemId)
+                        : GetItemDataFromProductDetails(itemId);
 
                     itemDataList.Add(itemData);
                 }
@@ -74,6 +76,16 @@ namespace PriceCollector.Collector.Flows
             };
         }
 
+        public ItemData GetItemDataFromProductDetails(string itemId)
+        {
+            return new ItemData
+            {
+                Id = itemId,
+                Availability = "n/a",
+                Price = GetPrice(itemId)
+            };
+        }
+
         protected string GetProductAvailability()
         {
             try
@@ -96,6 +108,31 @@ namespace PriceCollector.Collector.Flows
             {
                 return "not found";
             }
+        }
+
+        protected string GetPrice(string itemId)
+        {
+            try
+            {
+                return _webshopSearchResultPage.PriceValueElementFromItemsList(itemId).Text.DeleteCurrencySymbolsAndTrim();
+            }
+            catch
+            {
+                return "not found";
+            }
+        }
+
+        private bool IsProductItemBlockDisplayed()
+        {
+            try
+            {
+                return _webshopSearchResultPage.ProductSingleItemBlock().Displayed;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
     }
 }

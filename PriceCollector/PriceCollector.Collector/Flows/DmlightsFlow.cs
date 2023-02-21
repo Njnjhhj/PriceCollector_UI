@@ -60,7 +60,7 @@ namespace PriceCollector.Collector.Flows
         public void SearchProductItem(string itemId)
         {
             _dmlightsMainPage.SearchField.Clear();
-            _dmlightsMainPage.SearchField.SendKeys("*" + itemId);
+            _dmlightsMainPage.SearchField.SendKeys( itemId);
             _dmlightsMainPage.SearchField.SendKeys(Keys.Enter);
         }
 
