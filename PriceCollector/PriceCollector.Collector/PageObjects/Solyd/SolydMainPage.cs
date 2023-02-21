@@ -7,6 +7,6 @@ namespace PriceCollector.Collector.PageObjects.Solyd
     {
         public SolydMainPage(IWebDriver driver) : base(driver) { }
 
-        public IWebElement SearchField => driver.FindElement(By.CssSelector("#search"));
+        public IWebElement SearchField => driver.FindElement(By.CssSelector(".amsearch-input"));
     }
 }
