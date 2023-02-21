@@ -144,7 +144,7 @@ namespace PriceCollector.Collector
                 WebsitesEnum.Semmatec,
                 WebsitesEnum.Groothandel,
                 WebsitesEnum.Omnielectric,
-                WebsitesEnum.Zelektro,
+                WebsitesEnum.Zelektro,          //investigation required
                 //WebsitesEnum.MyElectro
             };
 
