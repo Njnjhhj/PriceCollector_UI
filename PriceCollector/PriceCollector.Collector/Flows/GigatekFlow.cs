@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using OpenQA.Selenium;
 using PriceCollector.Collector.DataModels;
@@ -15,16 +16,20 @@ namespace PriceCollector.Collector.Flows
     {
         private readonly GigatekMainPage _gigatekMainPage;
         private readonly GigatekSearchResultPage _gigatekSearchResultPage;
+        private readonly GigatekSearchPopup _gigatekSearchPopup;
 
         public GigatekFlow(IWebDriver driver) : base(driver)
         {
             _gigatekMainPage = new GigatekMainPage(driver);
             _gigatekSearchResultPage = new GigatekSearchResultPage(driver);
+            _gigatekSearchPopup = new GigatekSearchPopup(driver);
         }
 
         public void GetProductItemsList(string siteName, List<string> itemIdList, Dictionary<string, List<ItemData>> itemDataDict, TimeSpan delayBetweenRequests)
         {
             var itemDataList = new List<ItemData>();
+
+            InitiateSearchPopup();
 
             try
             {
@@ -35,6 +40,13 @@ namespace PriceCollector.Collector.Flows
                     SearchProductItem(itemId);
 
                     var itemData = GetItemDataFromSearchResult(itemId);
+
+                    if (string.IsNullOrEmpty(itemData.Price))
+                    {
+                        MethodUtils.Wait(TimeSpan.FromMilliseconds(300));
+                        itemData = GetItemDataFromSearchResult(itemId);
+                    }
+                        
 
                     itemDataList.Add(itemData);
                 }
@@ -52,11 +64,15 @@ namespace PriceCollector.Collector.Flows
 
         public void SearchProductItem(string itemId)
         {
-            _gigatekMainPage.SearchField.Clear();
-            _gigatekMainPage.SearchField.SendKeys(itemId);
-            _gigatekMainPage.SearchField.SendKeys(Keys.Enter);
+            _gigatekSearchPopup.SearchField.Clear();
 
-            Thread.Sleep(100);
+            foreach(var charItem in itemId)
+            {
+                var s = new StringBuilder().Append(charItem).ToString();
+                _gigatekSearchPopup.SearchField.SendKeys(s);
+            }
+            
+            Thread.Sleep(200);
         }
 
         public ItemData GetItemDataFromSearchResult(string itemId)
@@ -65,8 +81,34 @@ namespace PriceCollector.Collector.Flows
             {
                 Id = itemId,
                 Availability = "n/a",
-                Price = GetPrice()
+                Price = GetPriceFromSearchPopup(itemId)
             };
+        }
+
+        protected void InitiateSearchPopup()
+        {
+            _gigatekMainPage.SearchField.Clear();
+            _gigatekMainPage.SearchField.Click();
+        }
+
+        protected string GetPriceFromSearchPopup(string itemId)
+        {
+            try
+            {
+                try
+                {
+                    return _gigatekSearchPopup.PriceValueElement(itemId).Text.DeleteCurrencySymbolsAndTrim().ReplaceDotByComma();
+                }
+                catch
+                {
+
+                    return _gigatekSearchPopup.PriceValueElement(itemId).Text.DeleteCurrencySymbolsAndTrim().ReplaceDotByComma();
+                } 
+            }
+            catch
+            {
+                return "not found";
+            }
         }
 
         protected string GetPrice()
