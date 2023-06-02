@@ -46,7 +46,6 @@ namespace PriceCollector.Collector.Flows
                         MethodUtils.Wait(TimeSpan.FromMilliseconds(300));
                         itemData = GetItemDataFromSearchResult(itemId);
                     }
-                        
 
                     itemDataList.Add(itemData);
                 }
